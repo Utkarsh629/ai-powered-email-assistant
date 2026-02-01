@@ -45,7 +45,9 @@ ai-powered-email-assistant
 ├── email-writer-frontend  # React application (standalone email generator)
 └── email-writer-sb        # Spring Boot backend (LLM integration)
 
-```markdown
+
+
+
 🔄 Architecture Flow
 
 User opens the Gmail compose window
