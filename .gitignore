@@ -1,0 +1,24 @@
+# ===== Java / Spring Boot =====
+email-writer-sb/target/
+*.class
+
+# ===== React =====
+email-writer-frontend/node_modules/
+email-writer-frontend/dist/
+email-writer-frontend/build/
+
+# ===== Chrome Extension =====
+email-writer-ext/node_modules/
+
+# ===== Secrets / Environment =====
+.env
+application.properties
+
+# ===== OS / Editor =====
+.DS_Store
+.idea/
+.vscode/
+
+# ===== Logs =====
+*.log
+
