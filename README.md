@@ -49,103 +49,89 @@ ai-powered-email-assistant
 
 
 
-🔄 Architecture Flow
+### 🔄 Architecture Flow
 
-User opens the Gmail compose window
+1. User opens the **Gmail compose window**
+2. Chrome Extension detects UI changes using **MutationObserver**
+3. **AI Reply button** is injected into the Gmail toolbar
+4. Email content is extracted from the **Gmail DOM**
+5. A request is sent to the **Spring Boot REST API**
+6. Backend constructs a **controlled prompt** and calls the **LLM**
+7. Generated response is returned and **inserted into the compose box**
 
-Chrome Extension detects UI changes using MutationObserver
+---
 
-AI Reply button is injected into the Gmail toolbar
+### 🛠️ Tech Stack
 
-Email content is extracted from the Gmail DOM
+#### 🌐 Frontend / Chrome Extension
+- JavaScript (ES6+)
+- Chrome Extension APIs (Manifest V3)
+- DOM Manipulation
+- MutationObserver
 
-A request is sent to the Spring Boot REST API
+#### ⚙️ Backend
+- Java
+- Spring Boot
+- RESTful APIs
+- WebClient (external API calls)
+- Environment-based configuration
 
-Backend constructs a controlled prompt and calls the LLM
+#### 🤖 AI / LLM
+- Large Language Model (LLM) integration
+- Prompt engineering for controlled outputs
+- Single-response enforcement (no suggestions or explanations)
 
-Generated response is returned and inserted into the compose box
+---
 
-🛠️ Tech Stack
-🌐 Frontend / Chrome Extension
+### 🔐 Configuration & Security
 
-JavaScript (ES6+)
-
-Chrome Extension APIs (Manifest V3)
-
-DOM Manipulation
-
-MutationObserver
-
-⚙️ Backend
-
-Java
-
-Spring Boot
-
-RESTful APIs
-
-WebClient (external API calls)
-
-Environment-based configuration
-
-🤖 AI / LLM
-
-Large Language Model (LLM) integration
-
-Prompt engineering for controlled outputs
-
-Single-response enforcement (no suggestions or explanations)
-
-🔐 Configuration & Security
-
-Sensitive credentials are never hardcoded.
+Sensitive credentials are **never hardcoded**.
 
 The backend uses environment variables:
 
+```env
 GEMINI_API_URL=your_api_url_here
 GEMINI_API_KEY=your_api_key_here
 
 
+
 These are injected via application.properties using Spring’s configuration system.
 
-▶️ How It Works (High Level)
+### ▶️ How It Works (High Level)
 
-The Chrome Extension handles Gmail UI interaction
+- The **Chrome Extension** handles Gmail UI interaction  
+- The **Spring Boot backend** manages prompt construction and LLM communication  
+- The **LLM** generates a clean, professional email reply  
+- The reply is **inserted directly into Gmail** with one click  
 
-The Spring Boot backend manages prompt construction and LLM communication
+---
 
-The LLM generates a clean, professional email reply
-
-The reply is inserted directly into Gmail with one click
-
-🎯 Why This Project Matters
+### 🎯 Why This Project Matters
 
 This project demonstrates:
 
-Real-world full-stack development
-
-Practical AI integration (not just API calls)
-
-Browser extension engineering
-
-Clean system design and production-ready practices
+- Real-world **full-stack development**
+- Practical **AI integration** (not just API calls)
+- **Browser extension engineering**
+- Clean system design and **production-ready practices**
 
 It reflects skills expected in:
-Software Engineer · Full-Stack Engineer · Backend Engineer · AI Engineer roles.
+**Software Engineer · Full-Stack Engineer · Backend Engineer · AI Engineer** roles.
 
-🚀 Future Enhancements
+---
 
-Tone selection UI inside Gmail
+### 🚀 Future Enhancements
 
-Reply history & regeneration
+- Tone selection UI inside Gmail  
+- Reply history & regeneration  
+- User authentication  
+- Dockerized deployment  
+- Rate limiting & caching  
 
-User authentication
+---
 
-Dockerized deployment
+### 👤 Author
 
-Rate limiting & caching
-
-👤 Author
-
-Utkarsh Raj
+**Utkarsh Raj**  
 GitHub: https://github.com/Utkarsh629
+
