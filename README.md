@@ -44,6 +44,7 @@ ai-powered-email-assistant
 ├── email-writer-ext        # Chrome Extension (Gmail UI integration)
 ├── email-writer-frontend  # React application (standalone email generator)
 └── email-writer-sb        # Spring Boot backend (LLM integration)
+```
 
 
 
