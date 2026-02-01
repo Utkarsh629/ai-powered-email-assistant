@@ -8,20 +8,26 @@ This project demonstrates **full-stack engineering**, **browser extension develo
 
 ## 📌 Project Summary
 
-The AI-Powered Email Assistant automates professional email replies directly inside Gmail.  
-It combines **frontend DOM manipulation**, **backend API engineering**, and **prompt-controlled LLM interaction** to deliver a seamless user experience.
+The AI-Powered Email Assistant automates professional email replies directly inside Gmail.
+
+It combines:
+- Frontend **DOM manipulation**
+- Backend **REST API engineering**
+- Controlled **LLM prompt design**
+
+to deliver a seamless, real-world user experience.
 
 The system is designed with:
-- Clean separation of concerns
-- Secure configuration management
-- Scalable, modular architecture
+- Clean separation of concerns  
+- Secure configuration management  
+- Scalable, modular architecture  
 
 ---
 
 ## 🧠 Core Features
 
 - ✉️ **AI Reply button injected into Gmail compose window**
-- 🤖 **Automatic generation of single, high-quality professional email replies**
+- 🤖 **Single, high-quality professional email reply generation**
 - ⚡ **Real-time communication** between Chrome Extension and backend API
 - 🔍 **Dynamic DOM handling** using `MutationObserver` for Gmail’s changing UI
 - 🔐 **Secure API key handling** via environment variables
@@ -38,7 +44,9 @@ ai-powered-email-assistant
 ├── email-writer-ext        # Chrome Extension (Gmail UI integration)
 ├── email-writer-frontend  # React application (standalone email generator)
 └── email-writer-sb        # Spring Boot backend (LLM integration)
+---
 🔄 Architecture Flow
+
 User opens the Gmail compose window
 
 Chrome Extension detects UI changes using MutationObserver
@@ -55,6 +63,7 @@ Generated response is returned and inserted into the compose box
 
 🛠️ Tech Stack
 🌐 Frontend / Chrome Extension
+
 JavaScript (ES6+)
 
 Chrome Extension APIs (Manifest V3)
@@ -64,6 +73,7 @@ DOM Manipulation
 MutationObserver
 
 ⚙️ Backend
+
 Java
 
 Spring Boot
@@ -75,6 +85,7 @@ WebClient (external API calls)
 Environment-based configuration
 
 🤖 AI / LLM
+
 Large Language Model (LLM) integration
 
 Prompt engineering for controlled outputs
@@ -82,15 +93,19 @@ Prompt engineering for controlled outputs
 Single-response enforcement (no suggestions or explanations)
 
 🔐 Configuration & Security
-Sensitive credentials are not hardcoded.
+
+Sensitive credentials are never hardcoded.
 
 The backend uses environment variables:
 
 GEMINI_API_URL=your_api_url_here
 GEMINI_API_KEY=your_api_key_here
+
+
 These are injected via application.properties using Spring’s configuration system.
 
 ▶️ How It Works (High Level)
+
 The Chrome Extension handles Gmail UI interaction
 
 The Spring Boot backend manages prompt construction and LLM communication
@@ -100,6 +115,7 @@ The LLM generates a clean, professional email reply
 The reply is inserted directly into Gmail with one click
 
 🎯 Why This Project Matters
+
 This project demonstrates:
 
 Real-world full-stack development
@@ -110,20 +126,22 @@ Browser extension engineering
 
 Clean system design and production-ready practices
 
-It reflects skills expected in Software Engineer / Full-Stack / Backend / AI-Engineer roles.
+It reflects skills expected in:
+Software Engineer · Full-Stack Engineer · Backend Engineer · AI Engineer roles.
 
-📌 Future Enhancements
+🚀 Future Enhancements
+
 Tone selection UI inside Gmail
 
 Reply history & regeneration
 
 User authentication
 
-Deployment with Docker
+Dockerized deployment
 
 Rate limiting & caching
 
 👤 Author
+
 Utkarsh Raj
 GitHub: https://github.com/Utkarsh629
-
