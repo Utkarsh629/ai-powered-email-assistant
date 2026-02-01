@@ -1,173 +1,134 @@
-🚀 AI-Powered Email Assistant (Gmail Chrome Extension)
+# 🚀 AI-Powered Email Assistant  
+### Gmail Chrome Extension | Spring Boot | Large Language Model (LLM)
 
-An end-to-end AI-powered email reply system that integrates directly into Gmail using a Chrome Extension, a Spring Boot REST API, and a Large Language Model (LLM) to generate professional email responses in real time.
+> **Automates professional email replies directly inside Gmail using an AI-powered Chrome Extension backed by a Spring Boot REST API and an LLM.**
 
-📌 Project Summary
+---
 
-This project demonstrates the design and implementation of a full-stack AI application that automates professional email replies directly inside Gmail.
-It combines browser extension development, backend API engineering, and LLM prompt control to deliver a seamless user experience.
+## 📌 Project Overview
 
-The system is built with a production-oriented architecture, secure configuration management, and clean separation of concerns.
+The **AI-Powered Email Assistant** is a full-stack AI application that integrates seamlessly into Gmail to generate high-quality, professional email replies in real time.
 
-🧠 Core Features
+This project demonstrates **end-to-end system design**, combining browser extension development, backend API engineering, and controlled LLM prompt execution to deliver a production-oriented user experience.
 
-📧 AI Reply button injected into Gmail compose window
+---
 
-🤖 Automatic generation of single, high-quality professional email replies
+## 🧠 Key Features
 
-⚡ Real-time interaction between Chrome Extension and backend API
+- ✉️ **AI Reply button** injected directly into Gmail’s compose window  
+- 🤖 **LLM-powered email generation** with strict prompt control (single, complete response)  
+- ⚡ **Real-time communication** between Chrome Extension and backend REST API  
+- 🔍 **MutationObserver-based DOM handling** for Gmail’s dynamically rendered UI  
+- 🔐 **Secure API key management** using environment variables  
+- 🧩 **Modular architecture** with clear separation between extension, frontend, and backend  
 
-🔍 DOM manipulation using MutationObserver for Gmail’s dynamic UI
+---
 
-🔐 Secure handling of API keys using environment variables
+## 🏗️ System Architecture
 
-🧩 Modular architecture with independent frontend, backend, and extension layers
-
-🏗️ System Architecture
+```text
 ai-powered-email-assistant
-│
 ├── email-writer-ext        # Chrome Extension (Gmail UI integration)
-├── email-writer-frontend   # React application (standalone email generator)
-└── email-writer-sb         # Spring Boot backend (LLM integration)
+├── email-writer-frontend  # React application (standalone email generator)
+└── email-writer-sb        # Spring Boot backend (LLM integration)
+🔄 Architecture Flow
+User opens Gmail compose window
 
-Architecture Flow
+Chrome Extension injects AI Reply button using DOM observation
 
-User clicks “AI Reply” inside Gmail
+Email content is extracted from Gmail UI
 
-Chrome Extension extracts the email content from the DOM
+Request is sent to Spring Boot REST API
 
-Request is sent to a Spring Boot REST API
+Backend constructs a controlled prompt and calls the LLM
 
-Backend constructs a constrained prompt and calls the LLM (Gemini API)
+Generated response is returned and inserted into the compose box
 
-Generated reply is returned and injected back into Gmail’s compose editor
+🛠️ Tech Stack
+Frontend / Extension
+JavaScript (ES6+)
 
-🛠️ Tech Stack (ATS-Optimized)
+Chrome Extension APIs (Manifest V3)
+
+DOM Manipulation
+
+MutationObserver
+
 Backend
-
 Java
 
 Spring Boot
 
 RESTful APIs
 
-Spring WebFlux (WebClient)
+WebClient
 
-Jackson (JSON parsing)
-
-Environment-based configuration management
-
-Frontend
-
-React
-
-Material UI
-
-Axios
-
-Chrome Extension
-
-JavaScript
-
-DOM manipulation
-
-MutationObserver
-
-Gmail UI integration
-
-Chrome Extension APIs (Manifest v3)
-
-AI / NLP
-
-Large Language Model (LLM)
-
+AI / LLM
 Prompt Engineering
 
-Gemini API integration
+Gemini API (LLM integration)
 
-🔐 Security & Best Practices
+Output constraint enforcement
 
-No secrets committed to source control
+Tooling & Practices
+Git & GitHub
 
-API keys injected via environment variables:
+Environment Variables for secrets
 
-gemini.api.url=${GEMINI_API_URL}
-gemini.api.key=${GEMINI_API_KEY}
+Modular, production-oriented architecture
 
+🔐 Security & Configuration
+API keys are never hardcoded
 
-.gitignore configured to exclude:
+Sensitive values are injected using environment variables
 
-API keys
+Backend configuration isolated via application.properties
 
-Build artifacts
+.gitignore prevents secrets and build artifacts from being committed
 
-Node modules
+🎯 Engineering Highlights
+Designed prompt constraints to prevent multi-response or verbose LLM output
 
-OS/editor files
+Handled Gmail’s non-static DOM structure using MutationObserver
 
-⚙️ Setup Instructions
-Backend (Spring Boot)
-export GEMINI_API_URL=https://generativelanguage.googleapis.com
-export GEMINI_API_KEY=your_api_key_here
-./mvnw spring-boot:run
+Built a clean REST API boundary between UI and AI logic
 
-Frontend (React)
-cd email-writer-frontend
-npm install
-npm run dev
+Applied separation of concerns across extension, frontend, and backend layers
 
-Chrome Extension
+📈 Why This Project Matters
+This project reflects real-world AI engineering challenges, including:
 
-Open chrome://extensions
+Integrating AI into existing platforms (Gmail)
 
-Enable Developer Mode
+Managing unreliable DOM structures
 
-Click Load unpacked
+Enforcing deterministic LLM behavior
 
-Select the email-writer-ext directory
+Securing production credentials
 
-Open Gmail and start composing an email
+Designing scalable, modular systems
 
-🎯 Engineering Decisions
+📎 Repository Structure
+Each component can be run and tested independently:
 
-Prompt constraint enforcement: Ensures the LLM returns only one final email reply (no explanations or multiple options)
+Chrome Extension → Gmail integration
 
-Backend abstraction of LLM logic: Keeps API keys secure and allows future model changes
+React Frontend → Standalone email generation
 
-MutationObserver usage: Handles Gmail’s dynamically rendered UI reliably
+Spring Boot API → AI orchestration layer
 
-Monorepo structure: Simplifies development, testing, and deployment
+🧪 Future Enhancements
+Tone selection via UI
 
-🚧 Potential Enhancements
+Reply preview and edit mode
 
-Tone selection within Gmail UI
+Authentication and usage limits
 
-Response streaming for improved UX
+Model switching support
 
-User authentication and rate limiting
+Deployment using Docker
 
-Support for additional email platforms (Outlook, Yahoo)
-
-👨‍💻 Author
-
+👤 Author
 Utkarsh Raj
-Computer Science Engineering
-Interests: Backend Development, Cloud Computing, Applied AI Systems
+Computer Science Engineer | Backend & AI Enthusiast
 
-⭐ Why this project stands out
-
-This project demonstrates:
-
-Real-world Chrome Extension development
-
-Secure Spring Boot REST API design
-
-Practical LLM integration with prompt control
-
-Full-stack system thinking
-
-Production-ready coding practices
-
-📌 Resume-Ready Keywords (Intentional)
-
-Spring Boot · REST API · Chrome Extension · Java · React · LLM · Prompt Engineering · Web APIs · Backend Development · Full-Stack · API Security · System Design
