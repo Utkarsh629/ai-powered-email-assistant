@@ -92,6 +92,7 @@ The backend uses environment variables:
 ```env
 GEMINI_API_URL=your_api_url_here
 GEMINI_API_KEY=your_api_key_here
+```
 
 
 
